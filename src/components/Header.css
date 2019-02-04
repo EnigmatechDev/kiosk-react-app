@@ -1,0 +1,28 @@
+.header {
+	background-color: rgba(#282c34, 0.8);
+	display: inline-block;
+  align-items: center;
+	justify-content: center;
+	height: 6vh;
+}
+
+.title {
+  align-items: center;
+	justify-content: center;
+	display: inline-flex;
+	font-size: calc(42px + 1vmin);
+	padding: 1vmin;
+  color: white;
+}
+
+.title-website {
+	margin: 0px 50px 5px 5px;
+}
+
+.title-email {
+	margin: 0px 50px 5px 5px;
+}
+
+.title-date-and-time {
+	margin: 0px 5px 5px 500px;
+}
