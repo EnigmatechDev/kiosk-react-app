@@ -1,5 +1,5 @@
 import React from 'react'
-import appLog from './AppLogger'
+// import appLog from './AppLogger'
 import './Currency.css'
 
 // Note: Lets write any stateless functional components using the ES6 format

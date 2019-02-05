@@ -46,6 +46,7 @@ class SlideShow extends Component {
 			'hour': 3600000,
 			'day': 86400000,
 			'week': 604800000
+		
 		}
 
 		// for deployment this interval should be optimized to save on bandwidth.
@@ -104,7 +105,7 @@ class SlideShow extends Component {
   render() {
     return (
       <div className='slide-show-container'>
-     	<Slider autoplay="5000" touchDisabled="true" buttonDisabled="true" previousButton="" nextButton="" className="slider-wrapper">
+     	<Slider autoplay="20000" touchDisabled="true" buttonDisabled="true" previousButton="" nextButton="" className="slider-wrapper">
 				{this.state.slides.map((item, index) => (
 					<div
 						key={index}

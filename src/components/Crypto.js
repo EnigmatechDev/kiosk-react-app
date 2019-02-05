@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Currency from './Currency'
 import axios from 'axios'
-import appLog from './AppLogger'
+//import appLog from './AppLogger'
 import './Crypto.css'
 
 class Crypto extends Component {

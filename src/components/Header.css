@@ -1,28 +1,20 @@
 .header {
-	background-color: rgba(#282c34, 0.8);
-	display: inline-block;
-  align-items: center;
-	justify-content: center;
-	height: 6vh;
-}
-
-.title {
-  align-items: center;
-	justify-content: center;
 	display: inline-flex;
-	font-size: calc(42px + 1vmin);
-	padding: 1vmin;
-  color: white;
+	font-size: calc(32px + 1vmin);
+	color: white;
+	background-color: rgba(#000, 0.9);
+  align-items: center;
+	justify-content: center;
 }
 
-.title-website {
-	margin: 0px 50px 5px 5px;
+.header-website {
+	margin: 0px 25px 5px 5px;
 }
 
-.title-email {
-	margin: 0px 50px 5px 5px;
+.header-email {
+	margin: 0px 25px 5px 5px;
 }
 
-.title-date-and-time {
-	margin: 0px 5px 5px 500px;
+.header-date-and-time {
+	margin: 0px 5px 5px 160px;
 }
