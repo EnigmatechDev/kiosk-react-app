@@ -23,9 +23,9 @@ class SlideShow extends Component {
 				let slideData = response.data.map((media) => (
 					{
 							title: media.title.rendered,
-							medium: media.caption.rendered.replace('<p>','').replace('</p>','').split(",")[0],
-							size: media.caption.rendered.replace('<p>','').replace('</p>','').split(",")[1],
-							frame: media.caption.rendered.replace('<p>','').replace('</p>','').split(",")[2],
+							detail1: media.caption.rendered.replace('<p>','').replace('</p>','').split(",")[0],
+							detail2: media.caption.rendered.replace('<p>','').replace('</p>','').split(",")[1],
+							detail3: media.caption.rendered.replace('<p>','').replace('</p>','').split(",")[2],
 							price: media.alt_text,
 							image: media.source_url
 					}
@@ -56,7 +56,7 @@ class SlideShow extends Component {
 		console.log('SlideShow.componentDidMount... ');
 
 		this.fetchData()
-		this.interval = setInterval(() => this.fetchData(), delay.minute )
+		this.interval = setInterval(() => this.fetchData(), delay.day )
 	}
 
 	constructor(props) {
@@ -64,39 +64,84 @@ class SlideShow extends Component {
     this.state = {
 			slides: [
 				{
-					title: 'Smell my cheese',
-					description: 'Acrylic and Oil on Canvas, 50 x 70cm',
-					price: 'CHF 200.-',
-					image: 'https://i.imgur.com/ZXBtVw7.jpg'
+					title: 'Paintings, big or small',
+					detail1: 'My work comes in many different sizes',
+					detail2: 'large or small',
+					detail3: 'Let me know your needs',
+					price: '',
+					image: 'http://localhost:3000/images/slide-the-matriarch.jpg'
 				},
 				{
-					title: 'Tortor Dapibus Commodo Aenean Quam',
-					description: 'Acrylic and Oil on Canvas, 50 x 70cm',
-					price: 'CHF 200.-',
-					image: 'https://i.imgur.com/DCdBXcq.jpg'
+					title: 'Every piece is unique',
+					detail1: 'I create every one of my artworks',
+					detail2: 'from start to finish',
+					detail3: 'signed, varnished and ready to hang',
+					price: '',
+					image: 'http://localhost:3000/images/slide-signed-painting.jpg'
 				},
 				{
-					title: 'Phasellus volutpat metus',
-					description: 'Acrylic and Oil on Canvas, 50 x 70cm',
-					price: 'CHF 200.-',
-					image: 'https://i.imgur.com/DvmN8Hx.jpg'
+					title: 'Many more works in the pipeline',
+					detail1: 'I am always creating new work',
+					detail2: 'trying new subjects and styles',
+					detail3: 'open to new ideas and commissions',
+					price: '',
+					image: 'http://localhost:3000/images/slide-shelves.jpg'
 				},
 				{
-					title: 'Vulputate Mollis Ultricies Fermentum Parturient',
-					description: 'Acrylic and Oil on Canvas, 50 x 70cm',
-					price: 'CHF 200.-',
-					image: 'https://i.imgur.com/ZXBtVw7.jpg'
+					title: 'Local themes and views',
+					detail1: 'In my landscapes',
+					detail2: 'I attempt to capture the beauty',
+					detail3: 'of this wonderful country',
+					price: '',
+					image: 'http://localhost:3000/images/slide-pilatus-sunset.jpg'
 				},
 				{
-					title: 'Tortor Dapibus Commodo Aenean Quam',
-					description: 'Acrylic and Oil on Canvas, 50 x 70cm',
-					price: 'CHF 200.-',
-					image: 'https://i.imgur.com/DCdBXcq.jpg'
+					title: 'Only the best materials',
+					detail1: 'The finest food uses the best ingredients',
+					detail2: 'and artwork is no different',
+					detail3: 'I use only the highest quality art materials',
+					price: '',
+					image: 'http://localhost:3000/images/slide-paints.jpg'
 				},
 				{
-					title: 'Full Stack development',
-					description: 'Open to new projects. Contact me.',
-					image: 'https://i.imgur.com/DvmN8Hx.jpg'
+					title: 'A very local studio',
+					detail1: 'I work from a small private studio',
+					detail2: 'less than a five minute walk from here',
+					detail3: '',
+					price: '',
+					image: 'http://localhost:3000/images/slide-painting-space.jpg'
+				},
+				{
+					title: 'The beauty of canvas',
+					detail1: 'Canvas is perfect for paintings',
+					detail2: 'It is light weight for hanging',
+					detail3: 'lasts for many years and looks beautiful',
+					price: '',
+					image: 'http://localhost:3000/images/slide-mountain-wilderness-bg.jpg'
+				},
+				{
+					title: 'A very local artist',
+					detail1: 'As a resident of Zug',
+					detail2: 'much of my work features local wildlife',
+					detail3: 'as well as familiar views and themes',
+					price: '',
+					image: 'http://localhost:3000/images/slide-heron-at-the-harbor.jpg'
+				},
+				{
+					title: 'Art for every season',
+					detail1: 'Keep your space fresh and interesting',
+					detail2: 'rotate your paintings by the season',
+					detail3: 'I have work for every time of year',
+					price: '',
+					image: 'http://localhost:3000/images/slide-autumn-trees.jpg'
+				},
+				{
+					title: 'Support a local artist',
+					detail1: 'Buying my artwork enables',
+					detail2: 'me to continue to create it',
+					detail3: 'Thank you for your support!',
+					price: '',
+					image: 'http://localhost:3000/images/slide-morning-encounter-bg.jpg'
 				}
 			]
     }
@@ -105,7 +150,7 @@ class SlideShow extends Component {
   render() {
     return (
       <div className='slide-show-container'>
-     	<Slider autoplay="20000" touchDisabled="true" buttonDisabled="true" previousButton="" nextButton="" className="slider-wrapper">
+     	<Slider autoplay="10000" duration="10" touchDisabled="true" buttonDisabled="true" previousButton="" nextButton="" className="slider-wrapper">
 				{this.state.slides.map((item, index) => (
 					<div
 						key={index}
@@ -115,9 +160,9 @@ class SlideShow extends Component {
 						<div className="inner">
 							<h1>{item.title}</h1>
 							<div className="price">{item.price}</div>
-							<div className="details">{item.medium}</div>
-							<div className="details">{item.size}</div>
-							<div className="details">{item.frame}</div>
+							<div className="details">{item.detail1}</div>
+							<div className="details">{item.detail2}</div>
+							<div className="details">{item.detail3}</div>
 						</div>
 					</div>
 				))}

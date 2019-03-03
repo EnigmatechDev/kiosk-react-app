@@ -1,6 +1,7 @@
 .currency {
 	padding: 1rem 1rem 1rem;
-	margin: 0.8rem;
+	/* margin: 0.8rem; */
+	margin: 0.6rem 10rem 0.6rem 0.6rem;
 	border-radius: 0.5rem;
 	min-width: 9rem;
 	border: solid 1px rgba(0, 0, 0, 0.05);
@@ -8,21 +9,25 @@
 }
 
 .currency p {
-	color: rgba(0, 0, 0, 0.75);
+	/* color: rgba(0, 0, 0, 0.75); */
+	color: rgba(255, 255, 255, 0.75);
 }
 
 .currency-name {
+	color: rgba(255, 255, 255, 1);
 	font-size: 1.4rem;
 	font-weight: bold
 }
 
 .currency-price {
+	color: rgba(255, 255, 255, 1);
 	font-size: 1.4rem;
 	font-weight: bold
 }
 
 .currency-change {
-	font-size: 1.2rem;
+	color: rgba(255, 255, 255, 1);
+	font-size: 1rem;
 	font-weight: bold
 }
 
@@ -48,11 +53,13 @@ li:nth-of-type(2n-1) {
 */
 
 li:nth-of-type(2n) {
-	background-color: #e7d390;
+	/* background-color: #e7d390 0.75; */
+	background-color: rgb(231,211,144, 0.5);
 	/* border-bottom: solid 4px #ff9900; */
 }
 
 li:nth-of-type(2n-1) {
-	background-color: #93b9e4;
+	/* background-color: #93b9e4 0.75; */
+	background-color: rgb(147,185,228, 0.5);
 	/* border-bottom: solid 4px #0216f7; */
 }

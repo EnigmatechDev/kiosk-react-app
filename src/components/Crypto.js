@@ -11,8 +11,7 @@ class Crypto extends Component {
 		console.log('fetchCurrencyData...');
 
     axios
-			//.get('https://api.coinmarketcap.com/v1/ticker/?limit=20')
-			.get('https://api.coinmarketcap.com/v1/ticker/')
+			.get('https://api.coinmarketcap.com/v1/ticker/?limit=50&convert=CHF')
       .then(response => {
         const wanted = ['bitcoin', 'ripple', 'ethereum', 'eos', 'tether', 'litecoin', 'tron', 'monero', 'iota', 'neo']
         let result = response.data.filter(currency =>
@@ -36,34 +35,16 @@ class Crypto extends Component {
 		}
 
 		// for deployment this interval should be increased to save on bandwidth.
-    this.interval = setInterval(() => this.fetchCurrencyData(), delay.ten_secs)
+    this.interval = setInterval(() => this.fetchCurrencyData(), delay.hour)
 	}
 
   constructor(props) {
     super(props)
     this.state = {
-      data: [
-        {
-          id: 'bitcoin',
-          name: 'Bitcoin',
-          symbol: 'BTC',
-          price_usd: '1',
-          percent_change_1h: '0',
-          percent_change_24h: '0',
-          percent_change_7d: '0',
-        },
-        {
-          id: 'ethereum',
-          name: 'Ethereum',
-          symbol: 'ETH',
-          price_usd: '1',
-          percent_change_1h: '0',
-          percent_change_24h: '0',
-          percent_change_7d: '0',
-        },
-      ],
+      data: [],
     }
-  }
+	}
+	
   render() {
     let crypto = this.state.data.map(currency => (
       <Currency data={currency} key={currency.id} />

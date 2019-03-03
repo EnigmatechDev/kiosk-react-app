@@ -4,6 +4,12 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
+    "cors": "^2.8.5",
+    "g-trends": "0.0.6",
+    "google-trends-api": "^4.9.0",
+    "https-proxy-agent": "^2.2.1",
+    "mongo-db": "^1.0.2",
+    "mongodb": "^3.1.13",
     "node-sass": "^4.11.0",
     "react": "^16.7.0",
     "react-animated-slider": "^1.1.4",

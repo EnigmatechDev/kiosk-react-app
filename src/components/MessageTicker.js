@@ -13,10 +13,14 @@ function unicodeToChar(text) {
 
 class MessageTicker extends Component {
 
+	
+
 	fetchMessageData = () => {
 		// retrieve message text from my website
+		let url = 'http://phildoyleart.com/wp-json/wp/v2/posts/1532';
+		
 		axios
-      .get('http://phildoyleart.com/wp-json/wp/v2/posts/1532')
+      .get(url)
       .then(response => {
 
 				const result = response.data.content.rendered.split("--KIOSK--")[1]
@@ -56,14 +60,15 @@ class MessageTicker extends Component {
     super(props)
     this.state = {
 			messages: [
-				"Yow! Invest your bonus in something to brighten up the walls of our apartment.",
-				"If you see anything that interests you then please email me at the address above.",
-				"I also do commissions. So, if you would like something specific, then please let me know.",
-				"I can work in a range of subjects, media, styles, sizes and price range. Email me at the address above.",
-				"In addition to my artwork I'm a techie and responsible for this kiosk screen with live feeds and remote management.",
-				"Contact me if you would like a similar kiosk screen developed",
+				"Invest in something to brighten up the walls of our apartment and workspace.",
+				"If you see anything here that interests you then please email me at the address at the top of this screen.",
+				"Always new artwork being created, I am also happy to take on commissions. So, if you would like something specific, then please contact me.",
+				"My artwork covers a broad range of subjects, media, styles, sizes and prices. Email me at the address above.",
+				"In addition to my artwork, I'm a professional software developer, and techie, and responsible for this kiosk screen with live feeds and remote management.",
 				"Regarding software development, full stack web development, blockchain and crypto currency related work, I am also available.",
-				"In the year that should see the normalization of blockchain technology this is possibly the first public crypto currency live ticker in Switzerland. Yay!",
+				"By way of art reflecting the times, I also bring you the cryptocurrency ticker below.",
+				"In the year that should see the normalisation of decentralised ledger technology, such as blockchain, this is possibly the first public crypto currency live ticker in Switzerland. Yay!",
+				"I've more tech-art in the pipeline so watch this space. :)",
 				"Whatever you are doing, have a great day!"
 			],
     }

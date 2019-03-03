@@ -1,6 +1,6 @@
 * { box-sizing: border-box; }
-$duration: 250s;
-$durationCrypto: 300s;
+$duration: 100s;
+$durationCrypto: 180s;
 
 @-webkit-keyframes ticker {
   0% {
@@ -31,10 +31,10 @@ $durationCrypto: 300s;
 .ticker-wrap-text {
   
   position: fixed;
-	bottom: 200px;
+	bottom: 180px;
   width: 100%;
   overflow: hidden;
-  height: 8rem;
+  height: 5rem;
   background-color: rgba(#000, 0.3); 
   padding-left: 100%;
   box-sizing: content-box;
@@ -42,8 +42,8 @@ $durationCrypto: 300s;
   .ticker {
 
     display: inline-block;
-    height: 8rem;
-    line-height: 8rem;  
+    height: 5rem;
+    line-height: 4.5rem;  
     white-space: nowrap;
     padding-right: 100%;
     box-sizing: content-box;
@@ -59,8 +59,8 @@ $durationCrypto: 300s;
 
     &__item {
       display: inline-block;
-      padding: 0 6rem;
-      font-size: 6rem;
+      padding: 0 6rem 0 20rem;
+      font-size: 4rem;
       color: white;
     }
   }
@@ -71,7 +71,7 @@ $durationCrypto: 300s;
   position: fixed;
   bottom: 0px;
   width: 100%;
-  height: 13rem;
+  height: 12rem;
   background-color: rgba(#000, 0); 
   padding-left: 100%;
   box-sizing: content-box;
